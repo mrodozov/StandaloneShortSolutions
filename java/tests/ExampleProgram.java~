@@ -1,0 +1,13 @@
+public static void nested(int nRows,int nElementsInRow,int startingNumber){
+    
+    for (int i = startingNumber ; i < nRows+startingNumber ; i++ ){
+	for (int j = i ; j < nelementsInRow + i ; j++){
+	    System.out.print(j + " ")
+		}
+	System.out.println()
+	    }
+}
+
+public static void main (){
+    nested(5,4,1);
+}
