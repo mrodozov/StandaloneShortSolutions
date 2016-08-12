@@ -1,30 +1,23 @@
 #include <iostream>
-#include "interface/reusableView.h"
-#include "interface/controller.h"
-#include "interface/secondController.h"
+#include "interface/Controller.h"
+#include "interface/View.h"
 
 using namespace std;
 
 int main (int argc,char * argv[]){
   
   Controller * controler = new Controller();
-  View * anView = new View();
-  anView->setDimensions(15,17);
+  VView * av = new VView(10, 15);
+  controler->setView(av);
+  controler->getView()->show();
   
-  controler->setView(anView); // try to set the delegate from the view itself    
-  //anView->setDelegate(controler); // view is not set but in fact the controller creates the view as its own object so this is not a problem in the general case  
+  // now , once the view is shown every interaction goes first trough it
   
-  anView->show(); // should with new dimensions
-  anView->closeView(); 
-  anView->show(); // check dimensions change
-  anView->closeView();
+  av->closeSelf();
+  controler->getView()->closeSelf();
+  controler->getView()->close();
   
-  secondController * second = new secondController();
-  View * pointer = second->getView();
-  pointer->setDimensions(5,5);
-  pointer->closeView(); // check another implementation
   
-   second->getView();
   
   return 0;
 }

@@ -32,3 +32,4 @@ void BaseView::setDimensions(int height,int lenght){
 void BaseView::removeFromSuperView() {
   this->close();
 }
+

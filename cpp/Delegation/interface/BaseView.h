@@ -22,8 +22,9 @@ public:
   
   BaseView();
   BaseView(int height,int lenght);
-  ~BaseView();
+  virtual ~BaseView();
   
 };
+
 
 #endif

@@ -1,22 +1,19 @@
-#include "interface/controller.h"
+#include "interface/Controller.h"
 #include <iostream>
 
 using namespace std;
 
-void Controller::setView(View * view){
+void Controller::setView(VView * view){
   this->aView = view;
-  view->setDelegate(this);
+  this->aView->setDelegate(this);
 }
 
 void Controller::closeView(){
   
   if (this->getView() != NULL){
     
-    int newHeight = this->getView()->getHeight();
-    int newLenght = this->getView()->getLenght();
-    this->getView()->setDimensions(newHeight+1,newLenght+1);
-    cout << this->getView()->getHeight() << endl;
     this->getView()->close();
+    
   }
   else {
     cout << "view not set !" << endl;
@@ -41,7 +38,7 @@ Controller::~Controller(){
   
 }
 
-Controller::Controller(View * view){ // init with some view
+Controller::Controller(VView * view){ // init with some view
   this->setView(view);
 }
 
