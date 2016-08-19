@@ -3,9 +3,9 @@
 
 using namespace std;
 
-void Controller::setView(VView * view){
+void Controller::setView(View * view){
   this->aView = view;
-  this->aView->setDelegate(this);
+  this->getView()->setDelegate(this);
 }
 
 void Controller::closeView(){
@@ -38,7 +38,7 @@ Controller::~Controller(){
   
 }
 
-Controller::Controller(VView * view){ // init with some view
+Controller::Controller(View * view){ // init with some view
   this->setView(view);
 }
 

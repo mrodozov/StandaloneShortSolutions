@@ -1,5 +1,5 @@
-#ifndef VVIEW_H
-#define VVIEW_H
+#ifndef VIEW_H
+#define VIEW_H
 
 #include "BaseView.h"
 
@@ -15,7 +15,7 @@ public:
 };
 
 
-class VView : public BaseView {
+class View : public BaseView {
   
 private:
   
@@ -30,9 +30,9 @@ public:
   void closeSelf();
   virtual void show();
   
-  VView ( int height, int lenght );
-  VView();
-  ~VView();
+  View ( int height, int lenght );
+  View();
+  ~View();
   
 };
 

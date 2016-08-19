@@ -5,18 +5,18 @@
 
 class Controller : public ViewDelegate {
   
-  VView * aView;
+  View * aView;
   
 public:
   
   void closeView();
-  void setView(VView * view);
-  VView * getView() { return this->aView; }
+  void setView(View * view);
+  View * getView() { return this->aView; }
   void showView();
   
   Controller();
   ~Controller();
-  Controller(VView * view);
+  Controller(View * view);
   
 };
 

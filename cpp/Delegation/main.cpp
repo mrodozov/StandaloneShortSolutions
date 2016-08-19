@@ -7,13 +7,14 @@ using namespace std;
 int main (int argc,char * argv[]){
   
   Controller * controler = new Controller();
-  VView * av = new VView(10, 15);
+  View * av = new View(10, 15);
   controler->setView(av);
   controler->getView()->show();
   
   // now , once the view is shown every interaction goes first trough it
   
   av->closeSelf();
+  controler->closeView();
   controler->getView()->closeSelf();
   controler->getView()->close();
   

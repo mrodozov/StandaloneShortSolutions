@@ -4,15 +4,15 @@
 
 using namespace std;
 
-void VView::setDelegate ( ViewDelegate* d ) {
+void View::setDelegate ( ViewDelegate* d ) {
   this->vDelegate = d;
 }
 
-ViewDelegate* VView::getDelegate() {
+ViewDelegate* View::getDelegate() {
   return this->vDelegate;
 }
 
-void VView::closeSelf() {
+void View::closeSelf() {
   if (this->getDelegate() != NULL){
     cout << " view calls close on delegate" << endl;
     this->getDelegate()->closeView();
@@ -22,20 +22,20 @@ void VView::closeSelf() {
   }
 }
 
-void VView::show() {
+void View::show() {
   BaseView::show();
   cout << "showing view" << endl;
   cout << "##############################################" << endl;
 }
 
-VView::VView() {
+View::View() {
 
 }
 
-VView::VView ( int height, int lenght ) : BaseView ( height, lenght ) {
+View::View ( int height, int lenght ) : BaseView ( height, lenght ) {
   
 }
 
-VView::~VView() {
+View::~View() {
 
 }
